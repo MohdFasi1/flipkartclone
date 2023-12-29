@@ -1,27 +1,22 @@
 let search = document.querySelector('.search-bar');
 let history = document.querySelector('.search-history');
 let searchHistory=[]
-onload = function() {
-    updateSearchBar()
-}
 function updateSearchBar(){
-    let searchHistory = JSON.parse(localStorage.getItem('search'))
-    console.log(searchHistory)
+    searchHistory = JSON.parse(localStorage.getItem('search'))
     if(searchHistory.length==1){
-
-        history.innerHTML = `<a href="#">
+        history.innerHTML = `<a href="product-page.html?product=${searchHistory[0].productName}">
         <img src="src/hist.webp" alt="" width="32px" height="32px">
-        <span>${searchHistory[0]}</span>
+        <span>${searchHistory[0].productName}</span>
         </a>`
     }
     if(searchHistory.length>1){
-        history.innerHTML = `<a href="">
+        history.innerHTML = `<a href="product-page.html?product=${searchHistory[0].productName}">
         <img src="src/hist.webp" alt="" width="32px" height="32px">
-        <span>${searchHistory[0]}</span>
+        <span>${searchHistory[0].productName}</span>
     </a>
-    <a href="">
+    <a href="product-page.html?product=${searchHistory[1].productName}">
     <img src="src/hist.webp" alt="" width="32px" height="32px">
-    <span>${searchHistory[1]}</span>
+    <span>${searchHistory[1].productName}</span>
 </a>`
     }
         
@@ -30,11 +25,14 @@ function updateSearchBar(){
 search.addEventListener('keypress', function(e){
     if(e.key == 'Enter')
     {
-        searchHistory.unshift(search.value);
+        searchHistory.unshift({productName: search.value});
         if(searchHistory.length>2){
             searchHistory.pop();
-        }
+        }   
+        if(search.value.length > 0){
         localStorage.setItem('search', JSON.stringify(searchHistory));
-    updateSearchBar()
+        updateSearchBar()
+    window.location.href = `product-page.html?product=${search.value}`
+    }
     }
 })

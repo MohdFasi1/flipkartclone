@@ -1,17 +1,26 @@
-header{
-    display: flex;
-    padding: 12px 28px;
+.header{
+    width: 100%;
+    position: fixed;
+    margin: 0 auto;
     background-color: white;
+    /* padding: 12px 28px; */
+    z-index: 99;
+}
+header{
+    margin: 0 auto;
+    padding: 12px 28px;
+    width: 100%;
+    max-width: 1600px;  
+    user-select: none;
+}
+header>div{
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     gap: 20px;
-    position: fixed;
-    user-select: none;
 }
 .first,.second{
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     gap: 36px;
 }
@@ -21,7 +30,62 @@ header{
 }
 .ham{
     display: none;
-    position: absolute;
+}
+.ham-nav{
+    width: 75%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 110;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    transition: all .5s;
+}
+.ham-nav div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #2874f0;
+}
+.ham-nav-btn{
+    background: none;
+    border: none;
+    display: flex;
+    margin-right: 15px;
+}
+.ham-nav div h3{
+    color: white;
+    font-weight: 400;
+}
+.ham-nav a {
+    color: #353535;
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 16px;
+    font-size: 12px;
+    
+}
+.ham-nav a span{
+    font-size: 12px;
+    font-weight: bold;
+}
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    display: none;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100;
+    transition-delay: 2s;
+    transition-duration: 0.5s;
+    transition-property: all;
 }
 .search-bar{
     border: none;
@@ -59,6 +123,9 @@ input:focus{
     background-color: white;
     flex-direction: column;
 }
+.search-hist:hover{
+    display: flex;
+}
 .search-hist a{
     text-decoration: none;
     color: black;
@@ -71,7 +138,7 @@ input:focus{
     width: 32px;
     height: 32px;
 }
-.search-bar:focus+.search-hist{
+.search-bar:focus~.search-hist{
     display: flex;
 }
 .login-cont{
@@ -157,7 +224,66 @@ input:focus{
 .p8{
     padding: 8px;
 }
+.logo-lite{
+    display: none;
+    object-fit: contain;
+}
+.mob-cart{
+    display: none;
+}
+.mob-login{
+    display: none;
+}
+.mob-search{
+    display: none;
+}
+.mob-search-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.mob-search-btn-img{
+    object-fit: contain;
+    width: 14px;
+    height: 14px;
+}
+.mob-search-bar{
+    width: 100%;
+    border: none;
+}
+.search-hist a:hover{
+    background-color: #f0f5ff;
+}
+.more-3dot{
+    /* width: 210px; */
+    display: none;
+    position: fixed;
+    right: 28px;
+    background-color: white;
+}
+.more-3dot a{
+    display: flex;
+    padding: 10px;
+}
+.more-3dot h3{
+    color: black;
+    font-weight: 200;
+}
+.t3dot{
+    position: relative;
+}
+.t3dot:hover .t3dot-dot{
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+.t3dot:hover .more-3dot{
+    display: block;
+}
 @media screen and (max-width: 1024px) {
+    .more{
+        display: none;
+    }
     .wrap span{
         display: none;
     }
@@ -168,20 +294,49 @@ input:focus{
         gap: 6px;
     }
 }
-/* @media screen and (min-width: 768px) {
 
-  } */
-@media  screen and (max-width: 425px){
+@media screen and (max-width: 768px) {
+    header{
+        padding: 0 14px 8px 14px;
+        background-color: rgba(40,116,240,1.00);
+    }
+    .first{
+        gap: 10px;
+    }
     .lsp-none{
         display: none;
     }
-    header{
-        padding: 0 16px;
-    }
     .ham{
+        filter: brightness(0) invert(1);
+        display: flex;
+        width: 20px;
+    }
+    .logo-lite{
+        display: block;
+    }
+    .logo-plus{
+        display: none;
+    }
+    .mob-cart{
         display: flex;
     }
-    .first{
-        width: none;
+    .login-cont{
+        display: none;
+    }
+    .mob-login{
+        display: block;
+    }
+    .second{
+        gap: 25px;
+        padding: 0 10px 0 0;
+    }
+    .mob-search{
+        display: flex;
+        background-color: white;
+        width: 100%;
+        height: 38px;
+        margin-top: 8px;
+        border-radius: 2px;
+        gap: 0;
     }
 }

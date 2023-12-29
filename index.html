@@ -1,118 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" href="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-cbb357.png" type="image/png">
+    <link rel="icon"
+        href="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-cbb357.png"
+        type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/home.css">
 
 </head>
+
 <body>
-    <header>
-        <div class="first">
-            <a href="#" class="ham">
-                <img src="src/ham.svg" alt="">
+    <ul class="ham-nav">
+        <div>
+            <a href="login.html">
+                <img src="src/profile-nav.svg" alt="">
+                <h3>Login & Signup</h3>
             </a>
-            <img src="src/flipkart-logo.svg" alt="">
-            <div class="search-wrap lsp-none">
-                <label for="search"></label>
-                <button class="search-icon"><svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Search Icon</title><path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-                <input type="text" name="search" class="search-bar" placeholder="Search for Products, Brand and More">
-                <ul class="search-hist">
-                    <div class="search-history">
-                        
+            <div class="ham-nav-btn" onclick="clos()">
+
+                <img src="src/title-icon-round.png" width="20" height="20" >
+            </div>
+        </div>
+        <a href="">
+            <img src="src/supercoin.png" alt="" width="14" height="14">
+            <span>SuperCoin Zone</span>
+        </a>
+        <a href="">
+            <img src="src/plus.png" alt="" width="14" height="14">
+            <span>Flipkart Plus Zone</span>
+        </a>
+        <a href="">
+            <img src="src/allcatg.png" alt="" width="14" height="14">
+            <span>All Categories</span>
+        </a>
+        <a href="">
+            <img src="src/treand.png" alt="" width="14" height="14">
+            <span>Treanding Store</span>
+        </a>
+        <a href="">
+            <img src="src/more.webp" alt="" width="14" height="14">
+            <span>More On Flipkart</span>
+        </a>
+        <a href="">
+            <img src="src/lang.png" alt="" width="14" height="14">
+            <span>Choose Language</span>
+        </a>
+        <a href="">
+            <img src="src/offerz.png" alt="" width="14" height="14">
+            <span>Offer Zone</span>
+        </a>
+        <a href="">
+            <img src="src/sell.png" alt="" width="14" height="14">
+            <span>Sell on Flipkart</span>
+        </a>
+        <a href="">
+            <img src="src/myorder.webp" alt="" width="14" height="14">
+            <span>My Orders</span>
+        </a>
+        <a href="">
+            <img src="src/coupon.png" alt="" width="14" height="14">
+            <span>Coupons</span>
+        </a>
+        <a href="">
+            <img src="src/cart-nav.png" alt="" width="14" height="14">
+            <span>My Cart</span>
+        </a>
+        <a href="">
+            <img src="src/wish.svg" alt="" width="14" height="14">
+            <span>My Wishlist</span>
+        </a>
+        <a href="">
+            <img src="src/ax.png" alt="" width="14" height="14">
+            <span>My Account</span>
+        </a>
+        <a href="">
+            <img src="src/notif.png" alt="" width="14" height="14">
+            <span>Notification</span>
+        </a>
+        <a href="">
+            <span>Help Center</span>
+        </a>
+        <a href="">
+            <span>Legal</span>
+        </a>
+    </ul>
+    <div class="overlay"></div>
+    <div class="disp">
+        <div class="header">
+            <header>
+                <div>
+                <div class="first">
+                        <a href="#" class="ham" onclick="menu()">
+                            <img src="src/ham.svg" class="ham-img">
+                        </a>
+                    <a href="index.html"><img src="src/flipkart-logo.svg" class="logo-plus" alt="">
+                        <img src="src/logo-lite.png" alt="" class="logo-lite" width="85" height="52"></a>
+                    <div class="search-wrap lsp-none">
+                        <label for="search"></label>
+                        <button class="search-icon"><svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Search Icon</title>
+                                <path
+                                    d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                                    stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg></button>
+                        <input type="text" name="search" class="search-bar"
+                            placeholder="Search for Products, Brand and More">
+                        <ul class="search-hist">
+                            <div class="search-history">
+
+                            </div>
+                            <div>Discover More</div>
+                            <a href="catg.html?id:mobiles">
+                                <img src="src/search.webp" alt="">
+                                <span>mobiles</span>
+                            </a>
+                            <a href="catg.html?id:shoes">
+                                <img src="src/search.webp" alt="">
+                                <span>shoes</span>
+                            </a>
+                            <a href="catg.html?id:shirts">
+                                <img src="src/search.webp" alt="">
+                                <span>t shirts</span>
+                            </a>
+                            <a href="catg.html?id:laptops">
+                                <img src="src/search.webp" alt="">
+                                <span>laptops</span>
+                            </a>
+                            <a href="catg.html?id:watches">
+                                <img src="src/search.webp" alt="">
+                                <span>watches</span>
+                            </a>
+                            <a href="catg.html/?id:tv">
+                                <img src="src/search.webp" alt="">
+                                <span>tv</span>
+                            </a>
+                            <a href="catg.html?id:sarees">
+                                <img src="src/search.webp" alt="">
+                                <span>sarees</span>
+                            </a>
+                        </ul>
                     </div>
-                    <div>Discover More</div>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>mobiles</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>shoes</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>t shirts</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>laptops</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>watches</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>tv</span>
-                    </a>
-                    <a href="#">
-                        <img src="src/search.webp" alt="">
-                        <span>sarees</span>
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <div class="second">
-            <div class="login-cont">
-                <div class="login-wrap">
-                    <a href="#">
-                        <img src="src/profile.svg" alt="" width="24" height="24" class="prof">
-                        <span>Login</span>
-                    </a>
-                    <img src="src/prof-arr.svg" class="invert lsp-none" alt="" width="12" height="12">
                 </div>
-                <ul class="login-popup">
-                    <a href="#" class="login-popup-first">
-                        <div>New Customer?</div>
-                        <div>Sign Up</div>
+                <div class="second">
+                    <a href="cart.html" class="mob-cart">
+                        <svg width="16" height="16" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="#fff" fill-rule="evenodd">
+                                <path
+                                    d="m5.189 13.04c0 .996-.791 1.804-1.767 1.804-.976 0-1.767-.808-1.767-1.804 0-.996.791-1.804 1.767-1.804.976 0 1.767.808 1.767 1.804">
+                                </path>
+                                <path
+                                    d="m14.912 2.259h-14.298l2.247 6.917c.042.129.16.216.293.216h8.06c-.064.69-.629 1.841-1.702 1.841h-6.04l1.072 1.991h5.611c1.881 0 2.938-2.278 3.657-4.719.888-3.01 1.219-6.245 1.106-6.245">
+                                </path>
+                                <path
+                                    d="m.615 2.259l-.592-1.828c-.08-.207.069-.431.287-.431h1.482c.126 0 .24.079.287.198l.682 2.061c0 0-.63 1.642-1.942.066">
+                                </path>
+                                <path d="m2.262.756c0 0 .498 1.503 2.234 1.503l-1.736.749-1.104-.749.607-1.503"></path>
+                                <path
+                                    d="m13.424 13.325c0 .837-.664 1.516-1.484 1.516-.82 0-1.484-.679-1.484-1.516 0-.837.664-1.516 1.484-1.516.82 0 1.484.679 1.484 1.516">
+                                </path>
+                            </g>
+                        </svg>
                     </a>
-                    <a href="#">
-                        <img src="src/fpz.svg" alt="">
-                        <li>Flipkart Plus Zone</li>
+                    <div class="login-cont">
+                        <div class="login-wrap">
+                            <a href="login.html">
+                                <img src="src/profile.svg" alt="" width="24" height="24" class="prof">
+                                <span>Login</span>
+                            </a>
+                            <img src="src/prof-arr.svg" class="invert lsp-none" alt="" width="12" height="12">
+                        </div>
+                        <ul class="login-popup">
+                            <a href="signup.html" class="login-popup-first">
+                                <div>New Customer?</div>
+                                <div>Sign Up</div>
+                            </a>
+                            <a href="login.html">
+                                <img src="src/profile.svg" alt="">
+                                <li>My Profile</li>
+                            </a>
+                            <a href="plus.html">
+                                <img src="src/fpz.svg" alt="">
+                                <li>Flipkart Plus Zone</li>
+                            </a>
+                            <a href="#">
+                                <img src="src/order.svg" alt="">
+                                <li>Orders</li>
+                            </a>
+                            <a href="#">
+                                <img src="src/wish.svg" alt="">
+                                <li>Wishlist</li>
+                            </a>
+                            <a href="#">
+                                <img src="src/rewards.svg" alt="">
+                                <li>Rewards</li>
+                            </a>
+                            <a href="gift.html">
+                                <img src="src/gift.svg" alt="">
+                                <li>Gift Cards</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <a href="cart.html" class="wrap lsp-none">
+                        <img src="src/cart.svg" alt="" width="24" height="24">
+                        <span>Cart</span>
                     </a>
-                    <a href="#">
-                        <img src="src/order.svg" alt="">
-                        <li>Orders</li>
-                    </a>
-                    <a href="#">
-                        <img src="src/wish.svg" alt="">
-                        <li>Wishlist</li>
-                    </a>
-                    <a href="#">
-                        <img src="src/rewards.svg" alt="">
-                        <li>Rewards</li>
-                    </a>
-                    <a href="#">
-                        <img src="src/gift.svg" alt="">
-                        <li>Gift Cards</li>
-                    </a>
-                </ul>
-            </div>
-            <a href="#" class="wrap">
-                    <img src="src/cart.svg" alt="" width="24" height="24">
-                    <span>Cart</span>
-            </a>
-            <div class="wrap lsp-none">
-                <a href="#">
-                    <img src="src/seller.svg" alt="" width="24" height="24">
-                </a>
-                <span >Become a Seller</span>
-            </div>
-            <a href="#" class="wrap p8 lsp-none">
-                <img src="src/3dots.svg" alt="" width="24" height="24" >
-            </a>
+                    <div class="wrap lsp-none">
+                        <a href="seller.html">
+                            <img src="src/seller.svg" alt="" width="24" height="24">
+                            <span>Become a Seller</span>
+                        </a>
+                    </div>
+                    <div class="t3dot">
+                        <a href="#" class="wrap p8 lsp-none t3dot-dot">
+                        <img src="src/3dots.svg" alt="" width="24" height="24">
+                        </a>
+                        <ul class="more-3dot">
+                            <a href="">
+                                <img src="src/bell.svg" alt="">
+                                <h3>Notification Preferences</h3>
+                            </a>
+                            <a href="">
+                                <img src="src/help.svg" alt="">
+                                <h3>24x7 Customer Care</h3>
+                            </a>
+                            <a href="">
+                                <img src="src/adv.svg" alt="">
+                                <h3>Advertise</h3>
+                            </a>
+                            <a href="">
+                                <img src="src/download.svg" alt="">
+                                <h3>Download App</h3>
+                            </a>
+                        </ul>
+                    </div>
+                    <a href="login.html" class="mob-login">Login</a>
+                </div>
+                </div>
+                <div class="mob-search">
+                    <div class="mob-search-btn">
+                        <img src="src/mob-cart.png" class="mob-search-btn-img">
+                    </div>
+                    <input type="text" class="mob-search-bar" placeholder="Search for Products, Brand and More">
+                </div>
+            </header>
+            
         </div>
-    </header>
+    
+    
+    <section class="categories">
+        <a href="grocery.html" class="catg">
+            <img src="src/grocery.webp" alt="">
+            <h2>Grocery</h2>
+        </a>
+        <a href="catg.html?id:mobiles" class="catg">
+            <img src="src/mobiles.png" alt="">
+            <h2>Mobiles</h2>
+        </a>
+        <a href="catg.html?id:fashion" class="catg">
+            <img src="src/fashion.webp" alt="">
+            <h2>Fashion</h2>
+        </a>
+        <a href="catg.html?id:electronics" class="catg">
+            <img src="src/electronics.webp" alt="">
+            <h2>Electronics</h2>
+        </a>
+        <a href="catg.html?id:home$furniture" class="catg">
+            <img src="src/home&furniture.webp" alt="">
+            <h2>Home & Furniture</h2>
+        </a>
+        <a href="catg.html?id:applinces" class="catg">
+            <img src="src/applinces.webp" alt="">
+            <h2>Appliances</h2>
+        </a>
+        <a href="catg.html?id:travel" class="catg">
+            <img src="src/travel.webp" alt="">
+            <h2>Travel</h2>
+        </a>
+        <a href="catg.html?id:reauty$toys" class="catg">
+            <img src="src/toys.png" alt="">
+            <h2>Beauty, Toys & More</h2>
+        </a>
+        <a href="catg.html?id:two$wheeler" class="catg">
+            <img src="src/twowhelers.png" alt="">
+            <h2>Two Wheelers</h2>
+        </a>
+    </section>
 
+    <section class="imgCarousel">
+        <button class="imgbtns" onclick="showPrev()">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <div class="images">
+            <img src="src/imgCor1.webp" class="imagesimg">
+            <img src="src/imgcor2.webp" class="imagesimg">
+            <img src="src/imgCor1.webp" class="imagesimg">
+        </div>
+        <div class="animImageCarouseldots">
+            <span class="act"></span>
+            <span class="dots"></span>
+            <span class="dots"></span>
+            <span class="dots"></span>
+        </div>
+        <button class="imgbtns imgbtns-right" onclick="showNext()">
+            <i class="ri-arrow-right-s-line"></i>
+        </butto>
+    </section>
 
+    <main class="productDisplay">
+        
+    </main>
+    <footer>
+        <h1>Top Stories : Brand Directory</h1>
+        <div class="mostSearchesWrap">Most searched for on Flipkart:<h2 class="mostSearches"></h2></div>
+    </footer>
 
+</div>
+<div class="err">
+    <h2>Sorry!</h2>
+    <h1>Device not Suported</h1>
+</div>
+    <script src="script/nav.js"></script>
+    <script src="script/home.js"></script>
     <script src="script/search.js"></script>
 </body>
+
 </html>
