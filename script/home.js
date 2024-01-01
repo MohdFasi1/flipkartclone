@@ -66,14 +66,30 @@ async function displayProducts(){
   document.querySelector('.productDisplay').innerHTML = products.join(' ')
 }
 async function getFooterData(){
-  let msData;
+  let msData=[];
+  let mobData=[];
+  let laptopData=[];
+  let groceriesData=[];
+  let bestsellingData=[];
   let mostsearches = document.querySelector('.mostSearches')
+  let mobile = document.querySelector('.mobile')
+  let laptop = document.querySelector('.laptop')
+  let groceries = document.querySelector('.groceries')
+  let bestselling = document.querySelector('.bestselling')
   let fetchProducts = await fetch('https://dummyjson.com/products')
   response = await fetchProducts.json()
   productsList = await response.products
-  msData = productsList.map((e,i)=>{
-    return `<a href="ProductDetails.html?id:${i}">${e.title}</a>`
+  productsList.map((e,i)=>{
+    msData.push(`<a href="ProductDetails.html?id:${i}">${e.title}</a>`)
+    e.category == "smartphones" && mobData.push(`<a href="ProductDetails.html?id:${i}">${e.title}</a>`)
+    e.category == "laptops" && laptopData.push(`<a href="ProductDetails.html?id:${i}">${e.title}</a>`)
+    e.category == "groceries" && groceriesData.push(`<a href="ProductDetails.html?id:${i}">${e.title}</a>`)
+    e.rating > 4.5 && bestsellingData.push(`<a href="ProductDetails.html?id:${i}">${e.title}</a>`)
   })
-  console.log(msData)
-  mostsearches.innerHTML += msData.join(" ")
+  console.log(productsList)
+  mostsearches.innerHTML = msData.join(" ")
+  mobile.innerHTML = mobData.join(" ")
+  laptop.innerHTML = laptopData.join(" ")
+  groceries.innerHTML = groceriesData.join(" ")
+  bestselling.innerHTML = bestsellingData.join(" ")
 }
