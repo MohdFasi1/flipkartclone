@@ -5,10 +5,10 @@ let intervalId;
 let productsList;
 let products;
 onload = function(){
-  carousel()
   updateSearchBar()
-  displayProducts()
-  getFooterData()
+  // carousel()
+  // displayProducts()
+  // getFooterData()
 }
 function carousel() {
   intervalId = setInterval(showNext, 1500);
@@ -43,8 +43,8 @@ function updateCarousel() {
   document.querySelector('.act').style.transform = `translateX(${dotsarr[index]})`;
   dots[index].classList.add('active');
 }
-document.querySelector('.imgCarousel').addEventListener('mouseenter', stopcarosal);
-document.querySelector('.imgCarousel').addEventListener('mouseleave', carousel);
+// document.querySelector('.imgCarousel').addEventListener('mouseenter', stopcarosal);
+// document.querySelector('.imgCarousel').addEventListener('mouseleave', carousel);
 
 
 

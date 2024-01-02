@@ -270,8 +270,21 @@ footer div h2 a{
         grid-template-columns: repeat(4,auto);
         gap: 16px;
     }
+    .footer-top{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .footer-mailUs{
+        border: none;
+    }
+    .footer-bottom div.imgdisnone{
+        display: none;
+    }
 }
-
+@media (max-width:800px) {
+    .footer{
+        display: none;
+    }
+}
 @media (max-width: 768px){
     .categories {
         margin-top: 106px;
@@ -317,6 +330,7 @@ footer div h2 a{
     .imgCarousel{
         margin-top: 0;
     }
+    
 }
 @media (max-width: 426px){
     .productDisplay{
