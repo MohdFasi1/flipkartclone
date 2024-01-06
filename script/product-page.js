@@ -22,6 +22,6 @@ async function apiCall(){
     data = await fetch('https://dummyjson.com/products')
     resdata = await data.json()
     products =await resdata.products
-    console.log(products)
     return products
 }
+console.log(products)

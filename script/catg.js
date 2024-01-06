@@ -1,6 +1,7 @@
 let disCategory = document.querySelector('.disCategory')
 
 function catg(){
+    console.log()
     let catgs = products.map((e)=>e.category)
     let uniqueCatg = catgs.filter((e,i)=>catgs.indexOf(e) == i)
     console.log(uniqueCatg)

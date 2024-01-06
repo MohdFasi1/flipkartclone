@@ -7,7 +7,7 @@ let products;
 onload = function(){
   updateSearchBar()
   // carousel()
-  // displayProducts()
+  displayProducts()
   // getFooterData()
 }
 function carousel() {
@@ -55,7 +55,7 @@ async function displayProducts(){
   // console.log(productsList)
   products = productsList.map((e,i)=>{
     
-    return `<a href="ProductDetails.html?id:${i}">
+    return `<a href="ProductDetails.html?id=${i}">
     <img src="${e.images[0]}">
     <div>
     <h3>${e.title}</h3>
