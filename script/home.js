@@ -43,8 +43,8 @@ function updateCarousel() {
   document.querySelector('.act').style.transform = `translateX(${dotsarr[index]})`;
   dots[index].classList.add('active');
 }
-// document.querySelector('.imgCarousel').addEventListener('mouseenter', stopcarosal);
-// document.querySelector('.imgCarousel').addEventListener('mouseleave', carousel);
+document.querySelector('.imgCarousel').addEventListener('mouseenter', stopcarosal);
+document.querySelector('.imgCarousel').addEventListener('mouseleave', carousel);
 
 
 

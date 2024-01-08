@@ -1,3 +1,10 @@
+.disCategoryWrap{
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.16);
+    /* background-color: red; */
+
+}
+
+
 .ProductDetialscontainer{
     max-width: 1366px;
     width: 100%;
@@ -5,22 +12,23 @@
     background-color: white;
     padding: 16px;
     margin: 2px auto;
-}
-.disCategoryWrap{
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.16);
+    display: flex;
+    justify-content: space-between;
 }
 .pd-imgcontainer{
-    width: 40%;
+    width: 38%;
     position: sticky;
     top: 64px;
     bottom: 0;
     z-index: 2;
+    /* display: flex; */
+    height: min-content;
+}
+.img-imglistWrap{
     display: flex;
-    align-items: start;
-    align-self: flex-start;
 }
 .pd-imgList{
-    height: 448px;
+    max-height: 448px;
     display: flex;
     flex-direction: column;
 }
@@ -28,13 +36,94 @@
     width: 64px;
     height: 64px;
     list-style: none;
+    padding: 5px;
+    border: 1px solid #f0f0f0;
 }
 .pd-imgList img{
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+.pd-imgWrap{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+}
+.pd-imgWrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pd-btnsWrap{
+    margin-top: 12px;
+    margin-left: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+.pd-btnsWrap button{
+    
+}
+.pd-addtocart{
+    width: 48%;
+    padding: 18px 8px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    /* width: 98%; */
+    border: none;
+    background-color: #ff9f00;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    transition: box-shadow .2s ease;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-family: Roboto,Arial,sans-serif;
+}
+.pd-buyNow{
+    width: 48%;
+    padding: 18px 8px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    /* width: 98%; */
+    border: none;
+    background-color: #fb641b;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    transition: box-shadow .2s ease;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-family: Roboto,Arial,sans-serif;
+}
+
+
 
 .pd-DetailsContainer{
     width: 60%;
+}
+
+.productTitle{
+    color: #212121;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.prodRating{
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #388e3c;
 }

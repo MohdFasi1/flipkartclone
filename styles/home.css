@@ -44,12 +44,15 @@
 .images{
     width: 100%;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 .images img{
     transition: .5s ease-in-out;
     width: 100%;
     object-fit: cover;
+    scroll-snap-align: start;
     /* animation: img 1s ease-in-out 2s infinite alternate; */
 }
 /* @keyframes img {
@@ -330,7 +333,15 @@ footer div h2 a{
     .imgCarousel{
         margin-top: 0;
     }
-    
+    .images{
+        overflow-x: scroll;
+    }
+    .imgbtns{
+        display: none;
+    }
+    .animImageCarouseldots{
+        display: none;
+    }
 }
 @media (max-width: 426px){
     .productDisplay{
