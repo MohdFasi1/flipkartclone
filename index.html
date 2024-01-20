@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/dispProducts.css">
 
 </head>
 
@@ -107,8 +108,8 @@
                     </div>
                     <div class="search-wrap lsp-none">
                         <label for="search"></label>
-                        <button class="search-icon"><svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <button class="search-icon" onclick="searchData()"><svg width="24" height="24" class=""
+                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <title>Search Icon</title>
                                 <path
                                     d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
@@ -262,11 +263,11 @@
 
 
         <section class="categories">
-            <a href="grocery.html" class="catg">
+            <a href="catg.html?id=grocery" class="catg">
                 <img src="src/grocery.webp" alt="">
                 <h2>Grocery</h2>
             </a>
-            <a href="catg.html?id:mobiles" class="catg">
+            <a href="catg.html?id:smartphones" class="catg">
                 <img src="src/mobiles.png" alt="">
                 <h2>Mobiles</h2>
             </a>
@@ -274,7 +275,7 @@
                 <img src="src/fashion.webp" alt="">
                 <h2>Fashion</h2>
             </a>
-            <a href="catg.html?id:electronics" class="catg">
+            <a href="catg.html?id:tvs&laptops" class="catg">
                 <img src="src/electronics.webp" alt="">
                 <h2>Electronics</h2>
             </a>
@@ -290,7 +291,7 @@
                 <img src="src/travel.webp" alt="">
                 <h2>Travel</h2>
             </a>
-            <a href="catg.html?id:reauty$toys" class="catg">
+            <a href="catg.html?id:skincare&fragrances" class="catg">
                 <img src="src/toys.png" alt="">
                 <h2>Beauty, Toys & More</h2>
             </a>
@@ -317,7 +318,7 @@
             </div>
             <button class="imgbtns imgbtns-right" onclick="showNext()">
                 <i class="ri-arrow-right-s-line"></i>
-                </butto>
+            </button>
         </section>
 
         <main class="productDisplay">
@@ -574,6 +575,9 @@
         <h2>Sorry!</h2>
         <h1>Device not Suported</h1>
     </div>
+
+    <script src="script/index.js"></script>
+    <script src="script/firebase.js"></script>
     <script src="script/nav.js"></script>
     <script src="script/home.js"></script>
     <script src="script/search.js"></script>

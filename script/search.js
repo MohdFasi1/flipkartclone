@@ -3,7 +3,6 @@ let history = document.querySelector('.search-history');
 let searchHistory=[]
 function updateSearchBar(){
     searchHistory = JSON.parse(localStorage.getItem('search'))
-
     if(searchHistory.length>0){
         let searchData = searchHistory.map((e)=>`<a href="product-page.html?product=${e.productName}">
         <img src="src/hist.webp" alt="" width="32px" height="32px">
@@ -16,10 +15,14 @@ function updateSearchBar(){
 }
 
 search.addEventListener('keypress', function(e){
-    console.log("app")
     if(e.key == 'Enter')
     {
-        searchHistory.unshift({productName: search.value});
+        searchData()
+    }
+})
+
+function searchData(){
+    searchHistory.unshift({productName: search.value});
         if(searchHistory.length>5){
             searchHistory.pop();
         }
@@ -27,6 +30,5 @@ search.addEventListener('keypress', function(e){
         localStorage.setItem('search', JSON.stringify(searchHistory));
         updateSearchBar()
         window.location.href = `product-page.html?product=${search.value}`
-    }
-    }
-})
+        }
+}

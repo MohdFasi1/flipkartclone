@@ -122,50 +122,6 @@
 
 
 
-.productDisplay{
-    max-width: 1600px;
-    margin-top: 20px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6,auto);
-    row-gap: 20px;
-}
-.productDisplay a{
-    padding: 8px;
-    background-color: white;
-    /* width: 216px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    text-align: center;
-    color: black;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-}
-.productDisplay a img{
-    width: 100%;
-    object-fit: contain;
-    aspect-ratio: 1/1;
-}
-
-.productDisplay a h3{
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.01px;
-    font-weight: normal;
-}
-.productDisplay a h4{
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.01px;
-    font-weight: 600;
-}
-.productDisplay a img:hover{
-    transform: scale(1.05);
-}
-
-
 footer h1{
     font-size: 16px;
     color: #565656;
