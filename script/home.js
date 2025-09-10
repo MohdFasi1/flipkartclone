@@ -42,10 +42,10 @@ document.querySelector('.imgCarousel').addEventListener('mouseleave', carousel);
 
 
 async function displayProducts(){
-  // let fetchProducts = await fetch('https://dummyjson.com/products')
-  // response = await fetchProducts.json()
-  // productsList = await response.products
-  // console.log(productsList)
+  let fetchProducts = await fetch('https://dummyjson.com/products')
+  response = await fetchProducts.json()
+  productsList = await response.products
+  console.log(productsList)
   
   productsList = products.map((e,i)=>{
     return `<a href="ProductDetails.html?id=${i}">

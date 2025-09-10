@@ -170,7 +170,46 @@
     </nav>
     <main class="pp-main">
         <div class="filter">
-
+            <div class="filter-sidebar">
+                <h3 class="filter-title">Filters</h3>
+                <div class="filter-section">
+                    <div class="filter-label">CATEGORIES</div>
+                    <select class="filter-select">
+                        <option value="">All</option>
+                        <option value="mobiles">Mobiles</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Furniture</option>
+                        <option value="appliances">Appliances</option>
+                    </select>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-label">PRICE</div>
+                    <input type="range" min="500" max="50000" step="500" class="filter-price-range">
+                    <div class="filter-price-values">
+                        <span>₹500</span> - <span>₹50,000+</span>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-label">BRAND</div>
+                    <label><input type="checkbox" value="Samsung"> Samsung</label><br>
+                    <label><input type="checkbox" value="Apple"> Apple</label><br>
+                    <label><input type="checkbox" value="Realme"> Realme</label><br>
+                    <label><input type="checkbox" value="LG"> LG</label><br>
+                    <label><input type="checkbox" value="Sony"> Sony</label>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-label">CUSTOMER RATINGS</div>
+                    <label><input type="checkbox" value="4"> 4★ & above</label><br>
+                    <label><input type="checkbox" value="3"> 3★ & above</label>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-label">OFFERS</div>
+                    <label><input type="checkbox" value="discount"> Discount</label><br>
+                    <label><input type="checkbox" value="no-cost-emi"> No Cost EMI</label>
+                </div>
+                <button class="filter-apply-btn">Apply Filters</button>
+            </div>
         </div>
         <div class="displayProducts">
             <div class="productPath">

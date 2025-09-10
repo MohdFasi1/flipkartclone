@@ -19,7 +19,7 @@ let productCategoryArray = []
 function displaySearchedProduct(){
     products.map((e,i)=>{
         temp = e.description.toLowerCase().split(' ')
-        if(e.title.toLowerCase().includes(productSearched) || e.brand.toLowerCase().includes(productSearched) || e.category.includes(productSearched) || temp.includes(productSearched)){
+        if(e?.title?.toLowerCase().includes(productSearched) || e?.brand?.toLowerCase().includes(productSearched) || e?.category.includes(productSearched) || temp?.includes(productSearched)){
             productSearchedArray.push(`<a class="singleProductOverview" href="ProductDetails.html?id:${i}">
             <div class="po-imgContainer">
                 <div class="po-imgWrap">

@@ -3,9 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up | Flipkart</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        body {
+            background: #f1f3f6;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+        }
+        .signup-container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+        }
+        .flipkart-logo {
+            display: block;
+            margin: 0 auto 24px auto;
+            width: 120px;
+        }
+        .signup-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #2874f0;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .signup-desc {
+            font-size: 14px;
+            color: #878787;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .signup-form label {
+            font-size: 13px;
+            color: #878787;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            font-size: 15px;
+        }
+        .signup-form .signup-btn {
+            width: 100%;
+            background: #fb641b;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .signup-form .signup-btn:hover {
+            background: #f95c1c;
+        }
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+            color: #212121;
+        }
+        .login-link a {
+            color: #2874f0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #signup-message {
+            color:#d32f2f; font-size:13px; margin-top:8px; text-align:center;
+        }
+        @media (max-width: 500px) {
+            .signup-container {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 24px 12px 16px 12px;
+            }
+            .flipkart-logo {
+                width: 90px;
+            }
+        }
+    </style>
 </head>
 <body>
-    signup
+    <div class="signup-container">
+        <img src="src/flipkart-logo.svg" alt="Flipkart Logo" class="flipkart-logo">
+        <div class="signup-title">Sign Up</div>
+        <div class="signup-desc">Looks like you're new here! Sign up to get started</div>
+        <form class="signup-form">
+            <label for="name">Enter Name</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <label for="user">Enter Email/Mobile number</label>
+            <input type="text" id="user" name="user" placeholder="Email or Mobile Number" required>
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit" class="signup-btn">Sign Up</button>
+            <div id="signup-message"></div>
+        </form>
+        <div class="login-link">
+            Existing User? <a href="login.html">Log in</a>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase.js"></script>
+    <script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCF4iJjPnmeBg6ICC474Vlqs05TaOxJiWA",
+      authDomain: "flipkart-clone-4a6d4.firebaseapp.com",
+      projectId: "flipkart-clone-4a6d4",
+      storageBucket: "flipkart-clone-4a6d4.appspot.com",
+      messagingSenderId: "287294379535",
+      appId: "1:287294379535:web:ab9344e45c7f1c9050357a",
+      measurementId: "G-6M702XZCSK"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function showMessage(msg) {
+        document.getElementById('signup-message').textContent = msg;
+    }
+
+    function isEmail(input) {
+        return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input);
+    }
+
+    function isPhone(input) {
+        return /^\d{10}$/.test(input);
+    }
+
+    function signupHandler(e) {
+        e.preventDefault();
+        showMessage("");
+        var name = document.getElementById('name').value.trim();
+        var user = document.getElementById('user').value.trim();
+        var pass = document.getElementById('password').value;
+        if (!name) {
+            showMessage("Please enter your name.");
+            return;
+        }
+        if (isEmail(user)) {
+            // Email signup
+            firebase.auth().createUserWithEmailAndPassword(user, pass)
+            .then((userCredential) => {
+                showMessage("Signup successful! Redirecting to login...");
+                setTimeout(function(){ window.location.href = "login.html"; }, 1200);
+            })
+            .catch((error) => {
+                showMessage(error.message);
+            });
+        } else if (isPhone(user)) {
+            // Phone signup (OTP)
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('signup-message', {
+                'size': 'invisible',
+                'callback': function(response) {}
+            });
+            var phoneNumber = "+91" + user;
+            firebase.auth().signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier)
+            .then((confirmationResult) => {
+                window.confirmationResult = confirmationResult;
+                showMessage("OTP sent to your mobile. Please check your phone.");
+                // You can add OTP input and verification here
+            })
+            .catch((error) => {
+                showMessage(error.message);
+            });
+        } else {
+            showMessage("Please enter a valid email or 10-digit mobile number.");
+        }
+    }
+
+    document.querySelector('.signup-form').addEventListener('submit', signupHandler);
+    </script>
 </body>
 </html>
